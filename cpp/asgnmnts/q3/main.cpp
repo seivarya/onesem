@@ -38,7 +38,7 @@ class Student {
 		highlow();
 	}
 
-	bool is_passed() {
+	bool is_passed() { // can add simple check methods for range of input later
 		for (int i = 0; i < 6; i++) {
 			if (marks[i] < 40) {
 				return false;
@@ -113,7 +113,7 @@ class Student {
 
 int main(void) {
 	Student s;
-
+	// /?
 	s.input();
 	s.display();
 }

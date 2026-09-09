@@ -15,6 +15,7 @@ class Vehicle {
 			std::getline(std::cin >> std::ws, owner);
 
 			std::cout << "[input]: enter your registration number: ";
+
 			std::getline(std::cin >> std::ws, registration);
 
 			std::cout << "[input]: enter your vehicle type: ";
@@ -22,7 +23,6 @@ class Vehicle {
 
 			std::cout << "[input]: enter the duration of your stay!";
 			std::cin >> duration;
-
 		}
 
 		double charges() {
@@ -43,15 +43,36 @@ class Vehicle {
 					charge += 10;
 					temp--;
 				}
-			} else { // info: 30 | 15 for unknown vehicle
-				charge = 30;
+			} else { // info: 15 | 05 for unknown vehicle
+				charge = 15;
 				while (temp >= 0) {
-					charge += 15;
+					charge += 5;
 					temp--;
 				} 
 			}
 			return charge;
 		}
+		bool validate_name() {
+
+		}
+
+		bool validate_registration() {
+
+		}
+
+		bool validate_type() {
+
+		}
+
+		bool validate_duration() {
+
+		}
+
+		bool is_reg_valid(std::string reg) {
+
+		}
+
+
 };
 
 class Slot {
