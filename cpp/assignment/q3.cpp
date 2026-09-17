@@ -1,0 +1,53 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(void)
+{
+	int input;
+	cout << "[input]:: enter number of palindrones: ";
+	cin >> input;
+
+	for (int i = 1; i <= input; i++)
+	{
+
+		for (int j = 0; j < input - i; j++)
+		{
+			cout << "  ";
+		}
+
+		for (int k = 1; k < i; k++)
+		{
+			cout << k << " ";
+		}
+
+		for (int l = i; l > 0; l--)
+		{
+			cout << l << " ";
+		}
+
+		cout << endl;
+	}
+
+	int space = 1;
+
+	for (int i = input - 1; i > 0; i--)
+	{
+		for (int j = 1; j <= space; j++)
+		{
+			cout << "  ";
+		}
+
+		for (int k = 1; k < i; k++)
+		{
+			cout << k << " ";
+		}
+		for (int l = i; l > 0; l--)
+		{
+			cout << l << " ";
+		}
+		cout << endl;
+		space++;
+	}
+}
