@@ -7,35 +7,41 @@ int main(void)
 	cout << "[input]: ";
 	cin >> input;
 
+	int seqlen = 0;
+	int largest_seqlen = 0;
+	int start = 0;
+	int largest_val = 0;
 	for (int i = 1; i <= input; i++)
 	{
-
-		int term = 0;
-		int counter = 0;
-		int maxlen = 0;
-		int max = 0;
-
-		while (term != 1)
+		int copy = i;
+		int seqcount = 0;
+		while (copy != 1)
 		{
-
-			if (i % 2 == 0)
+			cout << "[ " << copy << " ] ";
+			if (copy % 2 == 0)
 			{
-				term /= 2;
+				copy = copy / 2;
 			}
 			else
 			{
-				term = (3 * term) + 1;
+				copy = (3 * copy) + 1;
 			}
-			if (term > max)
+			if (copy > largest_val)
 			{
-				max = term;
+				largest_val = copy;
 			}
-			counter++;
+			seqcount++;
 		}
+		cout << endl;
 
-		if (counter > maxlen)
+		if (seqcount > largest_seqlen)
 		{
-			maxlen = counter;
+			largest_seqlen = seqcount;
+			start = i;
 		}
 	}
+	cout << "[ collatz sequence ]" << endl;
+	cout << " [started with ] :: " << start << endl;
+	cout << " [ sequence length ] :: " << largest_seqlen << endl;
+	cout << " [ largest value reached ] :: " << largest_val << endl;
 }
