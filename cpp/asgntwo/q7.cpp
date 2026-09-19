@@ -7,7 +7,6 @@ int main(void)
 	cout << "[input]: ";
 	cin >> input;
 
-	int copy = input;
 	while (input != 1 && input != 4)
 	{
 		int sum = 0;
