@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// last part left
 int main(void)
 {
 	int N{0};
@@ -9,7 +10,7 @@ int main(void)
 
 	int total = 0;
 	int largest = 0;
-	int smallest = 0;
+	int smallest = 1;
 	int sum = 0;
 	int temp = 0;
 
@@ -21,11 +22,69 @@ int main(void)
 			int M = i * j;
 			int properties = 0;
 
-			if (properties >= 2)
-			{
-				cout << "[number] :: " << M << endl;
+			int divisors = 0;
+			int divsum = 0;
 
-				if (temp = 0)
+			for (int i = 1; i <= M; i++)
+			{
+				if (M % i == 0)
+				{
+					divisors++;
+					if (i != M)
+					{
+						divsum += i;
+					}
+				}
+			}
+
+			if (divisors == 2)
+			{
+				properties++;
+			}
+
+			if (divsum == M)
+			{
+				properties++;
+			}
+
+			int copy = M;
+			int palin = 0;
+			int arm = 0;
+			int digits = 0;
+			int tmp = M;
+
+			while (tmp > 0)
+			{
+				digits += 1;
+				tmp /= 10;
+			}
+
+			while (copy > 0)
+			{
+				int digit = copy % 10;
+				palin = palin * 10 + digit;
+				int powval = 1;
+				for (int pnum = 1; pnum <= digits; pnum++)
+				{
+					powval *= digit;
+				}
+				arm += powval;
+
+				copy /= 10;
+			}
+			if (arm == M)
+			{
+				properties++;
+			}
+			if (palin == M)
+			{
+				properties++;
+			}
+
+			if (properties == 2)
+			{
+
+				if (temp == 0)
 				{
 					smallest = M;
 					temp = 1;
@@ -44,3 +103,5 @@ int main(void)
 	cout << "[smallest]: " << smallest << endl;
 	cout << "[sum]: " << sum << endl;
 }
+
+// prime palin arm perf
