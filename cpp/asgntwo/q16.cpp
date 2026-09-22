@@ -3,6 +3,7 @@
 using namespace std;
 
 int main(void) {
+
 	int num;
 	cout << "[input]: ";
 	cin >> num;
@@ -11,6 +12,7 @@ int main(void) {
 		cout << "[err]: invalid input" << endl;
 		return 1;
 	}
+
 	int propmax = 0;
 	int propmax_num = 0;
 	for (int temp = 1; temp <= num; temp++) {
@@ -108,6 +110,7 @@ int main(void) {
 
 		// automorhpic logic
 		int aucopy = temp;
+		int autwocpy = temp;
 		int square = temp * temp;
 
 		int nums = 1;
@@ -148,9 +151,8 @@ int main(void) {
 			propmax_num = temp;
 		}
 		if (properties >= 3) {
-			cout << "[number] :: [properties] " << "[ " << temp << " ]" << " :: " << "[ " << properties << " ]" << endl;
+			cout << "[info] :: [number] : [ " << temp << " ] :: [properties] : [ " << properties << " ]" << endl;
 		}
 	}
-	cout << "[number with max properties] " << propmax_num << endl;
-	return 0;
+	cout << "[info] :: [number with max properties] : " << propmax_num << endl;
 }

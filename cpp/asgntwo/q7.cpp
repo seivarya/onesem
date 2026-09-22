@@ -23,11 +23,10 @@ int main(void) {
 	}
 
 	if (input == 1) {
-		cout << "[ happy number ]" << endl;
+		cout << "[info] :: [happy number]" << endl;
 	} else if (input == 4) {
-		cout << "[ unhappy number :( ]" << endl;
+		cout << "[info] :: [unhappy number :(]" << endl;
 	} else {
-		cout << "[ unexpected err ]" << endl;
+		cout << "[err]: unexpected err" << endl;
 	}
-	return 0;
 }

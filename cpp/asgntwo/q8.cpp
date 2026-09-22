@@ -1,3 +1,4 @@
+// later::
 #include <iostream>
 using namespace std;
 
@@ -14,24 +15,32 @@ int main(void) {
 	for (int number = 1; number <= input; number++) {
 		int sqrd = number * number;
 		int num = 0;
-		int cpy = number;
+		int cpy = sqrd;
 
 		while (cpy > 0) {
-			num++;
+			num += 1;
 			cpy /= 10;
 		}
 
-		int div = 1;
-		for (int i = 0; i < num; i++) {
+		int split = num / 2;
+		int div = 10;
+
+		while (split > 1) {
 			div *= 10;
+			split--;
 		}
 
 		int acpy = sqrd / div;
 		int bcpy = sqrd % div;
 
-		if (acpy + bcpy == number && (bcpy != 0 || number == 1)) {
-			cout << " kaprekar number :: " << number << endl;
+		if (num % 2 != 0) {
+			// incomplete!
+		} else {
+			if (bcpy != 0) {
+				if (acpy + bcpy == number) {
+					cout << "[info] :: [kaprekar number] : " << number << endl;
+				}
+			}
 		}
 	}
-	return 0;
 }

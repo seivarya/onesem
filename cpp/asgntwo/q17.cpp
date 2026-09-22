@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// last part left
 int main(void) {
 	int N{0};
 	cout << "[input]: ";
@@ -17,6 +18,7 @@ int main(void) {
 	int sum = 0;
 	int temp = 0;
 
+	int max_row = 0;
 	for (int i = 1; i <= N; i++) {
 		for (int j = 1; j <= N; j++) {
 			int M = i * j;
@@ -25,11 +27,11 @@ int main(void) {
 			int divisors = 0;
 			int divsum = 0;
 
-			for (int d = 1; d <= M; d++) {
-				if (M % d == 0) {
+			for (int i = 1; i <= M; i++) {
+				if (M % i == 0) {
 					divisors++;
-					if (d != M) {
-						divsum += d;
+					if (i != M) {
+						divsum += i;
 					}
 				}
 			}
@@ -72,6 +74,7 @@ int main(void) {
 			}
 
 			if (properties == 2) {
+
 				if (temp == 0) {
 					smallest = M;
 					temp = 1;
@@ -84,9 +87,10 @@ int main(void) {
 			}
 		}
 	}
-	cout << "[total number of such values]: " << total << endl;
-	cout << "[largest]: " << largest << endl;
-	cout << "[smallest]: " << smallest << endl;
-	cout << "[sum]: " << sum << endl;
-	return 0;
+	cout << "[info] :: [total number of such values] : " << total << endl;
+	cout << "[info] :: [largest] : " << largest << endl;
+	cout << "[info] :: [smallest] : " << smallest << endl;
+	cout << "[info] :: [sum] : " << sum << endl;
 }
+
+// prime palin arm perf

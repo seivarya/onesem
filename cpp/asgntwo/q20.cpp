@@ -2,14 +2,10 @@
 using namespace std;
 
 int main(void) {
-	int A, B;
-	cout << "[input]: ";
+	int A;
+	int B;
+	cout << "[input]: enter A & B :: ";
 	cin >> A >> B;
-
-	if (A <= 0 || B <= 0 || A >= B) {
-		cout << "[err]: invalid range" << endl;
-		return 1;
-	}
 
 	int winner = 0;
 	int winnum = 0;
@@ -57,9 +53,15 @@ int main(void) {
 
 		if (is_rev_prime && is_greater_div && is_greater_prod) {
 			int score = product * divisors;
-			cout << "[winning number] :: [ " << i << " ]" << endl;
-			cout << "[score] :: [ " << score << " ]" << endl;
+			cout << "[info] :: [winning number] : [ " << i << " ]" << endl;
+			cout << "[info] :: [score] : [ " << score << " ]" << endl;
 		}
+
+		// cout << "[digit sum] : " << sum << endl;
+		// cout << "[digit product] : " << product << endl;
+		// cout << "[digit divisors] : " << divisors << endl;
+		// cout << "[digits count] : " << digits << endl;
+		// cout << "[digit reverse] : " << reverse << endl;
+		// cout << "[digit score] : " << score << endl;
 	}
-	return 0;
 }

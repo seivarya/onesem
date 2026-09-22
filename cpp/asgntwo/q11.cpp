@@ -37,9 +37,8 @@ int main(void) {
 			start = i;
 		}
 	}
-	cout << "[ collatz sequence ]" << endl;
-	cout << " [started with ] :: " << start << endl;
-	cout << " [ sequence length ] :: " << largest_seqlen << endl;
-	cout << " [ largest value reached ] :: " << largest_val << endl;
-	return 0;
+	cout << "[info] :: [collatz sequence]" << endl;
+	cout << "[info] :: [started with] : " << start << endl;
+	cout << "[info] :: [sequence length] : " << largest_seqlen << endl;
+	cout << "[info] :: [largest value reached] : " << largest_val << endl;
 }

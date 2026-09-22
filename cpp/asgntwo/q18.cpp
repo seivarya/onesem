@@ -10,6 +10,7 @@ int main(void) {
 		cout << "[err]: invalid input" << endl;
 		return 1;
 	}
+
 	for (int i = 1; i <= N; i++) {
 		int properties = 0;
 		int copy = i;
@@ -42,8 +43,7 @@ int main(void) {
 		}
 
 		if (properties == 2) {
-			cout << "[ found number ] :: " << "[ " << i << " ]" << endl;
+			cout << "[info] :: [found number] : " << "[ " << i << " ]" << endl;
 		}
 	}
-	return 0;
 }

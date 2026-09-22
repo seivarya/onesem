@@ -2,51 +2,53 @@
 using namespace std;
 
 int main(void) {
-	int input;
-	cout << "[input]: ";
-	cin >> input;
+    int input;
+    cout << "[input]: ";
+    cin >> input;
 
-	if (input <= 0) {
-		cout << "[err]: invalid input" << endl;
-		return 1;
-	}
+    if (input <= 0) {
+        cout << "[err]: invalid input" << endl;
+        return 1;
+    }
 
-	int digits = 0;
-	int copy = input;
-	while (copy > 0) {
-		digits++;
-		copy /= 10;
-	}
+    int digits = 0;
+    int copy = input;
 
-	int is_self = 1;
-	for (int i = 0; i < digits; i++) {
-		int div = 1;
-		for (int p = 0; p < digits - 1 - i; p++) {
-			div *= 10;
-		}
-		int num = (input / div) % 10;
+    while (copy > 0) {
+        digits++;
+        copy /= 10;
+    }
 
-		int counter = 0;
-		int ccopy = input;
-		while (ccopy > 0) {
-			int temp = ccopy % 10;
-			if (temp == i) {
-				counter++;
-			}
-			ccopy /= 10;
-		}
+    int div = 1;
+    for (int i = 1; i < digits; i++) {
+        div *= 10;
+    }
 
-		if (counter != num) {
-			is_self = 0;
-			break;
-		}
-	}
+    int bcopy = input;
 
-	if (is_self) {
-		cout << "[ self descriptive ]" << endl;
-	} else {
-		cout << "[ not self descriptive ]" << endl;
-	}
+    for (int i = 0; i < digits; i++) {
+        int counter = 0;
+        int num = bcopy / div;
 
-	return 0;
+        int ccopy = input;
+        while (ccopy > 0) {
+            int temp = ccopy % 10;
+
+            if (temp == i) {
+                counter++;
+            }
+
+            ccopy /= 10;
+        }
+
+        if (num != counter) {
+            cout << "[info] :: [not self descriptive!]" << endl;
+            return 0;
+        }
+
+        bcopy %= div;
+        div /= 10;
+    }
+
+    cout << "[info] :: [self descriptive!]" << endl;
 }

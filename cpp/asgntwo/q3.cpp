@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -44,5 +45,4 @@ int main(void) {
 		cout << endl;
 		space++;
 	}
-	return 0;
 }

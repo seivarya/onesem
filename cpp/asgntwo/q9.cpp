@@ -29,8 +29,7 @@ int main(void) {
 		}
 
 		if (sqrd % div == number) {
-			cout << "[ automorphic number ] :: " << number << endl;
+			cout << "[info] :: [automorphic number] : " << number << endl;
 		}
 	}
-	return 0;
 }

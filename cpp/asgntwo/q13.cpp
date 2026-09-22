@@ -39,7 +39,6 @@ int main(void) {
 
 		num--;
 	}
-	cout << "[power max] :: " << powmax << endl;
-	cout << "[power max digit] :: " << powmaxdig << endl;
-	return 0;
+	cout << "[info] :: [power max] : " << powmax << endl;
+	cout << "[info] :: [power max digit] : " << powmaxdig << endl;
 }

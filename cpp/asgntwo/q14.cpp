@@ -2,8 +2,9 @@
 using namespace std;
 
 int main(void) {
+
 	int oned;
-	int twod;
+	int twod = 3324891;
 	cout << "[input] :: ";
 	cin >> oned;
 	cout << "[input] :: ";
@@ -19,9 +20,9 @@ int main(void) {
 	for (int i = 0; i <= 9; i++) {
 		int xtmp = oned;
 		while (xtmp > 0) {
-			int digit = xtmp % 10;
-			if (i == digit) {
-				xsorted = xsorted * 10 + digit;
+			int oned = xtmp % 10;
+			if (i == oned) {
+				xsorted = xsorted * 10 + oned;
 				xcounter++;
 			}
 			xtmp /= 10;
@@ -42,7 +43,7 @@ int main(void) {
 		}
 	}
 	if (xcounter != ycounter) {
-		cout << "[not anagrams!]" << endl;
+		cout << "[info] :: [not anagrams!]" << endl;
 		return 1;
 	}
 	int xcpy = xsorted;
@@ -52,12 +53,11 @@ int main(void) {
 		int i = xcpy % 10;
 		int j = ycpy % 10;
 		if (i != j) {
-			cout << "[not anagrams!]" << endl;
+			cout << "[info] :: [not anagrams!]" << endl;
 			return 1;
 		}
 		xcpy /= 10;
 		ycpy /= 10;
 	}
-	cout << "[anagram digits!]" << endl;
-	return 0;
+	cout << "[info] :: [anagram digits!]" << endl;
 }

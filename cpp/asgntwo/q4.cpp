@@ -23,9 +23,8 @@ int main(void) {
 		while (printed < primes) {
 			int divisors = 0;
 			for (int div = 1; div <= number; div++) {
-				if (number % div == 0) {
+				if (number % div == 0)
 					divisors++;
-				}
 			}
 
 			if (divisors == 2) {
@@ -47,9 +46,8 @@ int main(void) {
 		while (printed < primes) {
 			int divisors = 0;
 			for (int div = 1; div <= number; div++) {
-				if (number % div == 0) {
+				if (number % div == 0)
 					divisors++;
-				}
 			}
 			if (divisors == 2) {
 				cout << number << " ";
@@ -59,5 +57,4 @@ int main(void) {
 		}
 		cout << endl;
 	}
-	return 0;
 }

@@ -1,17 +1,10 @@
 #include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main(void) {
-	int input;
-	cout << "[input]: ";
-	cin >> input;
-
-	if (input <= 0) {
-		cout << "[err]: invalid matrix size" << endl;
-		return 1;
-	}
-
+	int input = 5;
 	int main_diagonal = 0;
 	int side_diagonal = 0;
 
@@ -28,6 +21,7 @@ int main(void) {
 				side_diagonal += (i * j);
 			}
 			if (i == input - 1 && j == input) {
+				// cout << i << "::" << j << endl;
 				max_main = i * j;
 			}
 			if (i == 2 && j == 1) {
@@ -36,9 +30,8 @@ int main(void) {
 		}
 		cout << endl;
 	}
-	cout << main_diagonal << endl;
-	cout << side_diagonal << endl;
-	cout << max_main << endl;
-	cout << min_main << endl;
-	return 0;
+	cout << "[info] :: [sum of main diagonal] : " << main_diagonal << endl;
+	cout << "[info] :: [sum of secondary diagonal] : " << side_diagonal << endl;
+	cout << "[info] :: [largest element above main diagonal] : " << max_main << endl;
+	cout << "[info] :: [smallest element below main diagonal] : " << min_main << endl;
 }
