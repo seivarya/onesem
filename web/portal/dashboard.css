@@ -1,0 +1,313 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #f5f5f5;
+	color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+.page {
+	background: #fff;
+}
+
+
+.top-bar {
+	height: 34px;
+	padding: 0 22px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	background: #9b1518;
+	color: white;
+	font-size: 11px;
+}
+
+.top-bar input {
+	width: 170px;
+	height: 22px;
+	margin-left: 12px;
+	padding: 4px 8px;
+	border: 0;
+	border-radius: 2px;
+	font-size: 11px;
+}
+
+.header {
+	height: 76px;
+	padding: 7px 25px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	background: white;
+}
+
+.logo {
+	width: 310px;
+	max-height: 65px;
+	object-fit: contain;
+}
+
+.header-images {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+.header-images img {
+	max-height: 52px;
+	width: auto;
+}
+
+
+.main-nav {
+	min-height: 34px;
+	padding: 0 20px;
+
+	display: flex;
+	align-items: center;
+	gap: 28px;
+
+	background: #991417;
+	color: white;
+
+	font-size: 12px;
+}
+
+.main-nav span {
+	cursor: default;
+}
+
+.main-nav .home {
+	font-weight: bold;
+}
+
+.content {
+	display: flex;
+	min-height: 600px;
+}
+
+.sidebar {
+	width: 170px;
+	padding: 14px 10px;
+
+	background: #fafafa;
+	border-right: 1px solid #ddd;
+}
+
+.sidebar h3 {
+	margin: 0 0 12px;
+	padding: 10px;
+
+	color: #991417;
+	font-size: 14px;
+}
+
+.sidebar a {
+	display: block;
+	padding: 9px 12px;
+	margin-bottom: 3px;
+
+	color: #333;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+	color: #991417;
+	background: #f4dada;
+}
+
+.nitw-image {
+	width: 100%;
+	margin-top: 25px;
+}
+
+.dashboard {
+	flex: 1;
+	padding: 12px;
+	min-width: 0;
+}
+
+
+.welcome {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 12px 15px;
+}
+
+.welcome h2 {
+	margin: 0 0 6px;
+	font-size: 16px;
+}
+
+.welcome h2 span {
+	color: #991417;
+}
+
+.welcome p {
+	margin: 3px 0;
+	font-size: 11px;
+}
+
+.quote {
+	color: #777;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.date-box {
+	min-width: 170px;
+	padding: 12px;
+	background: #fff2f2;
+	border-radius: 4px;
+	text-align: center;
+	color: #991417;
+}
+
+.date-box strong {
+	display: block;
+	margin-top: 5px;
+	color: #991417;
+	font-size: 16px;
+}
+
+.summary {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.summary-box {
+	padding: 10px;
+	width: 300px;
+	text-align: center;
+	gap: 12px;
+	background: #edf5ff;
+	border: 1px solid #dce8f4;
+	border-radius: 4px;
+}
+
+.summary-box.green {
+	background: #eef9ef;
+}
+
+.summary-box.yellow {
+	background: #fff8e8;
+}
+
+.summary-box.red {
+	background: #fff0f0;
+}
+
+.card {
+	background: white;
+	border: 1px solid #e1e1e1;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.card-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.card h3 {
+	margin: 0;
+	color: #991417;
+	font-size: 13px;
+}
+
+.card-title a {
+	color: #991417;
+	text-decoration: none;
+	font-size: 10px;
+}
+
+.columns {
+	gap: 20px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 10px;
+}
+
+th {
+	padding: 7px 5px;
+	background: #f4f4f4;
+	color: #444;
+	text-align: left;
+}
+
+td {
+	padding: 7px 5px;
+	border-top: 1px solid #eee;
+}
+
+button {
+	padding: 5px 8px;
+	background: #166ed0;
+	color: white;
+	border: 0;
+	border-radius: 2px;
+	font-size: 9px;
+}
+
+.status {
+	padding: 3px 6px;
+	background: #edf5ff;
+	background-color: #166ed0;
+	color: white;
+	border-radius: 3px;
+}
+
+.active-status {
+	background-color: green;
+	color: white;
+}
+
+.announcement {
+	padding: 8px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.announcement:last-child {
+	border-bottom: 0;
+}
+
+.announcement small {
+	color: #999;
+	font-size: 9px;
+}
+
+.announcement p {
+	margin: 4px 0 0;
+	line-height: 1.4;
+	font-size: 10px;
+}
+
+footer {
+	min-height: 35px;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #991417;
+	color: white;
+	font-size: 10px;
+}

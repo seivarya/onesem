@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+	<div class="main-container">
+		<header>
+			<div class="top-section">
+				<div class="header-left-container">
+					<ul>
+						<li>Government of India</li>
+						<li>Ministry of Education</li>
+						<li>NITs</li>
+						<li>RTI</li>
+						<li>Grievances</li>
+						<li>Careers</li>
+					</ul>
+				</div>
+
+				<div class="header-right-container">
+					<div class="header-right-left-container">
+						<p>A-</p>
+						<p>A</p>
+						<p>A+</p>
+						<span>|</span>
+						<p>हिंदी</p>
+					</div>
+					<div class="header-right-right-container">
+						<input type="text" placeholder="Search...">
+					</div>
+				</div>
+			</div>
+	</div>
+	</header>
+
+	<div class="mid-section">
+
+	</div>
+
+	<footer>
+
+	</footer>
+	</div>
+
+
+</body>
+
+</html>
