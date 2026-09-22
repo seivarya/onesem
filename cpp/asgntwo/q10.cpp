@@ -1,46 +1,52 @@
 #include <iostream>
 using namespace std;
-int main(void)
-{
-	int input = 2020;
-	// cout << "[input]: ";
-	// cin >> input;
+
+int main(void) {
+	int input;
+	cout << "[input]: ";
+	cin >> input;
+
+	if (input <= 0) {
+		cout << "[err]: invalid input" << endl;
+		return 1;
+	}
+
 	int digits = 0;
 	int copy = input;
-	while (copy > 0)
-	{
+	while (copy > 0) {
 		digits++;
 		copy /= 10;
 	}
-	cout << digits << endl;
-	int div = 1;
-	while (digits > 1)
-	{
-		div *= 10;
-		digits--;
-	}
-	cout << div << endl;
 
-	int bcopy = input;
-	for (int i = 0; i < digits; i++)
-	{
+	int is_self = 1;
+	for (int i = 0; i < digits; i++) {
+		int div = 1;
+		for (int p = 0; p < digits - 1 - i; p++) {
+			div *= 10;
+		}
+		int num = (input / div) % 10;
+
 		int counter = 0;
-		int num = bcopy / div;
 		int ccopy = input;
-		while (ccopy > 0)
-		{
+		while (ccopy > 0) {
 			int temp = ccopy % 10;
-			if (temp == num)
-			{
+			if (temp == i) {
 				counter++;
 			}
 			ccopy /= 10;
 		}
-		if (i != counter)
-		{
-			cout << "not self descriptive!" << endl;
+
+		if (counter != num) {
+			is_self = 0;
+			break;
 		}
-		bcopy %= div;
-		div /= 10;
 	}
+
+	if (is_self) {
+		cout << "[ self descriptive ]" << endl;
+	} else {
+		cout << "[ not self descriptive ]" << endl;
+	}
+
+	return 0;
 }
