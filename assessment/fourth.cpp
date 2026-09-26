@@ -1,0 +1,90 @@
+#include <iostream>
+#include <limits>
+using namespace std;
+
+void validate_coupon(string *coupon, int *discount, int *min);
+
+int SUCCESS = 0;
+int REJECTS = 0;
+
+int main(void)
+{
+	while (1)
+	{
+		string name;
+		cout << "[input] :: enter name :: ";
+		getline(cin, name);
+
+		unsigned int amount;
+		cout << "[input] :: enter order amount :: ";
+		cin >> amount;
+
+		cin.ignore();
+
+		string coupon;
+		cout << "[input] :: enter coupon :: ";
+		getline(cin, coupon);
+
+		int counter = 0;
+		int discount = 0;
+		int min = 0;
+
+		if (amount > 500)
+			validate_coupon(&coupon, &discount, &min);
+		else
+		{
+			REJECTS++;
+			cout << "[no discount applicable!]" << endl;
+		}
+
+		int final;
+		final = amount - (amount * discount / 100);
+
+		cout << "[discount] :: " << amount * discount / 100 << endl;
+		cout << "[final price] :: " << final << endl;
+
+		int status = 0;
+
+		cout << "[continue] :: do you wish to continue? yes: 1 | no: 0 ";
+		cin >> status;
+
+		if (status == 0)
+			break;
+		cin.ignore();
+	}
+	cout << "[SUCCESS] :: " << SUCCESS << endl;
+	cout << "[REJECTS] :: " << REJECTS << endl;
+
+	return 0;
+}
+
+void validate_coupon(string *coupon, int *discount, int *min)
+{
+	if (*coupon == "SAVE10")
+	{
+		*discount = 10;
+		*min = 500;
+	}
+	else if (*coupon == "SAVE20")
+	{
+		*discount = 20;
+		*min = 1000;
+	}
+	else if (*coupon == "SAVE30")
+	{
+		*discount = 30;
+		*min = 2000;
+	}
+	else
+	{
+		cout << "[status] :: no discount applied! "
+		     << "i.e. invalid coupon / expired coupon" << endl;
+
+		*discount = 0;
+		*min = 0;
+		REJECTS++;
+		return;
+	}
+
+	SUCCESS++;
+}
