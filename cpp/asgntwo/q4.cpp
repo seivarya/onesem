@@ -2,33 +2,32 @@
 
 using namespace std;
 
-int main(void)
-{
+int main(void) {
 	int input;
 	cout << "[input]:: enter number for primes: ";
 	cin >> input;
 
+	if (input <= 0) {
+		cout << "[err]: invalid number of rows" << endl;
+		return 1;
+	}
+
 	int number = 2;
-	for (int row = 1; row <= input; row++)
-	{
-		for (int space = 1; space <= input - row; space++)
-		{
+	for (int row = 1; row <= input; row++) {
+		for (int space = 1; space <= input - row; space++) {
 			cout << "  ";
 		}
 
 		int primes = (row * 2) - 1;
 		int printed = 0;
-		while (printed < primes)
-		{
+		while (printed < primes) {
 			int divisors = 0;
-			for (int div = 1; div <= number; div++)
-			{
+			for (int div = 1; div <= number; div++) {
 				if (number % div == 0)
 					divisors++;
 			}
 
-			if (divisors == 2)
-			{
+			if (divisors == 2) {
 				cout << number << " ";
 				printed++;
 			}
@@ -37,25 +36,20 @@ int main(void)
 		}
 		cout << endl;
 	}
-	for (int row = input - 1; row > 0; row--)
-	{
-		for (int space = 0; space < input - row; space++)
-		{
+	for (int row = input - 1; row > 0; row--) {
+		for (int space = 0; space < input - row; space++) {
 			cout << "  ";
 		}
 
 		int primes = (row * 2) - 1;
 		int printed = 0;
-		while (printed < primes)
-		{
+		while (printed < primes) {
 			int divisors = 0;
-			for (int div = 1; div <= number; div++)
-			{
+			for (int div = 1; div <= number; div++) {
 				if (number % div == 0)
 					divisors++;
 			}
-			if (divisors == 2)
-			{
+			if (divisors == 2) {
 				cout << number << " ";
 				printed++;
 			}
